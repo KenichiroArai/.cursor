@@ -7,9 +7,9 @@ globs: src/**/*.java
 あなたは高度な問題解決能力を持つAIアシスタントです。以下の指示に従って、効率的かつ正確にタスクを遂行してください。
 
 まず、ユーザーから受け取った指示を確認します：
-<指示>
-{{instructions}}
-</指示>
+
+- 指示
+  {{instructions}}
 
 この指示を元に、以下のプロセスに従って作業を進めてください：
 
@@ -107,71 +107,6 @@ globs: src/**/*.java
 - **明示的に指示されていない変更は行わないでください。** 必要と思われる変更がある場合は、まず提案として報告し、承認を得てから実施してください。
 - **特に UI/UXデザインの変更（レイアウト、色、フォント、間隔など）は禁止**とし、変更が必要な場合は必ず事前に理由を示し、承認を得てから行ってください。
 - **技術スタックに記載のバージョン（APIやフレームワーク、ライブラリ等）を勝手に変更しないでください。** 変更が必要な場合は、その理由を明確にして承認を得るまでは変更を行わないでください。
-
----
-
-## 技術スタック
-
-### コア技術
-
-- Java: 21
-- Spring Boot: 3.2.1
-- JUnit Jupiter: (Spring Boot依存バージョン)
-- Mockito: 5.11.0
-
-### 開発ツール
-
-- Maven: 3.9.x
-- Eclipse: 2024-03
-- JaCoCo: 0.8.11
-
-### プロジェクト設定
-
-- Java Compiler: Java 21
-- Source Encoding: UTF-8
-- Test Thread Count: 8
-- Test Fork Count: 2C
-
----
-
-## プロジェクト構成
-
-以下のディレクトリ構造に従って実装を行ってください：
-
-```bash
-directory-operation-parallel-execution-tool/
-├── src/
-│   ├── main/
-│   │   ├── java/
-│   │   │   └── kmg/
-│   │   │       └── tool/
-│   │   │           └── directorytool/
-│   │   │               ├── service/      # サービス層
-│   │   │               ├── model/        # モデル
-│   │   │               └── runner/       # 実行クラス
-│   │   └── resources/                    # リソースファイル
-│   └── test/
-│       ├── java/                         # テストコード
-│       │   └── kmg/
-│       │       └── tool/
-│       │           └── directorytool/
-│       │               ├── service/      # サービステスト
-│       │               ├── model/        # モデルテスト
-│       │               └── runner/       # 実行クラステスト
-│       └── resources/                    # テストリソース
-├── .settings/                            # Eclipse設定
-│   ├── org.eclipse.jdt.core.prefs       # Java開発設定
-│   ├── org.eclipse.jdt.ui.prefs         # UI設定
-│   └── org.eclipse.core.resources.prefs  # リソース設定
-└── pom.xml                              # Mavenプロジェクト設定
-```
-
-### 配置ルール
-
-- サービスクラス → `src/main/java/kmg/tool/directorytool/service/`
-- モデルクラス → `src/main/java/kmg/tool/directorytool/model/`
-- 実行クラス → `src/main/java/kmg/tool/directorytool/runner/`
-- テストクラス → 対応する実装クラスと同じパッケージ構成
 
 ---
 
