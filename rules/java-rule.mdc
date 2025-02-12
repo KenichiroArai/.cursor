@@ -196,6 +196,16 @@ public boolean someMethod(String input) {
 
 ## テストのコーディングルール
 
+### テストクラスのアノテーション
+
+下記のアノテーションを設定する。
+
+```Java
+@SuppressWarnings({
+    "nls", "static-method"
+})
+```
+
 ### テストメソッド名
 
 - ```testXxx_パターンYyy```の形式とする。
@@ -206,10 +216,6 @@ public boolean someMethod(String input) {
 ### テストメソッドのアクセス修飾子
 
 - ```testXXX```メソッドのアクセス修飾子を全て```public```にする。
-
-### テストメソッドのアノテーション
-
-- 静的なメソッド（インスタンス変数にアクセスしていない）の場合は、```@SuppressWarnings("static-method")```を設定する。
 
 ### テストメソッドの中身
 
