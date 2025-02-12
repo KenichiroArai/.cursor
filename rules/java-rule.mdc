@@ -212,6 +212,10 @@ public boolean someMethod(String input) {
 - 「Xxx」の先頭は大文字で対象となるメソッド名を入れる。
 - 「パターン」は正常系の場合は「normal」、準正常系の場合は「semi」、異常系の場合は「error」とする。
 - 「Yyy」の先頭は大文字でテスト項目を入れる。
+- 例
+  正常系:testXxx_normalYyy
+  準正常系:testXxx_semiYyy
+  異常系:testXxx_errorYyy
 
 ### テストメソッドのアクセス修飾子
 
