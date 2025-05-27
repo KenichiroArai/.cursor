@@ -1,6 +1,7 @@
 ---
 description: Java実装時のルール
 globs: src/**/*.java
+alwaysApply: false
 ---
 # プロジェクトの指示
 
@@ -195,6 +196,10 @@ public boolean someMethod(String input) {
 ```
 
 ## テストのコーディングルール
+
+### テスト単位
+
+メソッド単位で行う。privateメソッドの場合は`kmg.core.infrastructure.model.impl.KmgReflectionModelImpl`を使用してテストメソッドを実装する。
 
 ### テストクラスのアノテーション
 
@@ -437,11 +442,11 @@ public class SampleClass {
 ```java
 /**
  * [クラス/メソッド/フィールドの名前]の説明
- * 
+ *
  * 詳細な説明（必要な場合）
- * 
+ *
  * 業務ロジックの説明（必要な場合）
- * 
+ *
  * @author      作成者 <email@example.com>
  * @param       [引数名] [引数の説明]
  * @return      [戻り値の説明]
