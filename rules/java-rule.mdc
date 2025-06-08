@@ -213,7 +213,7 @@ public boolean someMethod(String input) {
 
 ### テストメソッド名
 
-- ```testXxx_パターンYyy```の形式とする。
+- `testXxx_パターンYyy`の形式とする。
 - 「Xxx」の先頭は大文字で対象となるメソッド名を入れる。
 - 「パターン」は正常系の場合は「normal」、準正常系の場合は「semi」、異常系の場合は「error」とする。
 - 「Yyy」の先頭は大文字でテスト項目を入れる。
@@ -224,7 +224,7 @@ public boolean someMethod(String input) {
 
 ### テストメソッドのアクセス修飾子
 
-- ```testXXX```メソッドのアクセス修飾子を全て```public```にする。
+- `testXXX`メソッドのアクセス修飾子を全て`public`にする。
 
 ### テストメソッドの中身
 
@@ -239,7 +239,7 @@ public boolean someMethod(String input) {
 
 #### フォーマット
 
-```対象メソッド名 メソッドのテスト - パターン:テスト内容```
+`対象メソッド名 メソッドのテスト - パターン:テスト内容`
 
 パターンは正常系、準正常系、異常系を入れる。
 
@@ -257,37 +257,43 @@ public boolean someMethod(String input) {
 
 1. 期待値の定義
 
-- ```/* 期待値の定義 */```のコメントを入れる。
-- ```expected```で始まる期待値を定義する。
+- `/* 期待値の定義 */`のコメントを入れる。
+- `expected`で始まる期待値を定義する。
 
 2. 準備
 
-- ```/* 準備 */```のコメントを入れる。
+- `/* 準備 */`のコメントを入れる。
 - テスト対象を行うために準備しておくべき処理。
-- ```test```で始まる変数で定義する。
+- `test`で始まる変数で定義する。
 
 3. テスト対象の実行
 
-- ```/* テスト対象の実行 */```のコメントを入れる。
-- ```test```で始まる変数で定義する。
+- `/* テスト対象の実行 */`のコメントを入れる。
+- `test`で始まる変数で定義する。
 - テスト対象を実行する。
 
 4. 検証の準備
 
-- ```/* 検証の準備 */```のコメントを入れる。
-- ```actual```で始まる実際の値を定義する。
+- `/* 検証の準備 */`のコメントを入れる。
+- `actual`で始まる実際の値を定義する。
 
 5. 検証の実施
 
-- ```/* 検証の実施 */```のコメントを入れる。
-- ```Assertions.assertTrue```は```actualXXX```と説明を記載する。
-- ```Assertions.assertEquals```は```actualXXX```と説明を記載する。
-- ```Assertions.assertEquals```は```expectedXXX```と```actualXXX```と説明を記載する。
+- `/* 検証の実施 */`のコメントを入れる。
+- `Assertions.assertTrue`は`actualXXX`と説明を記載する。
+- `Assertions.assertEquals`は`actualXXX`と説明を記載する。
+- `Assertions.assertEquals`は`expectedXXX`と`actualXXX`と説明を記載する。
+
+### 検証方法の指定
+
+- 1行1行で検証する
+- 極力、`Assertions.assertEquals`を使用する
+- `Assertions.assertTrue`または`Assertions.assertFalse`は、`Assertions.assertEquals`で代行できる場合は代行する。ただし、`condition`が`boolean`であれば、`Assertions.assertTrue`または`Assertions.assertFalse`を使用する
+- `instanceof`の比較は`Assertions.assertInstanceOf`を使用する
 
 ### メッセージの検証
 
-- ```Assertions.assertEquals```を使用する
-- 1行1行で検証する
+- コード例に習い、メッセージは1行ずつ検証を行う
 
 #### メッセージの検証のコード例
 
