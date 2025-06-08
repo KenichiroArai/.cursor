@@ -289,7 +289,7 @@ public boolean someMethod(String input) {
 - 1行1行で検証する
 - 極力、`Assertions.assertEquals`を使用する
 - `Assertions.assertTrue`または`Assertions.assertFalse`は、`Assertions.assertEquals`で代行できる場合は代行する。ただし、`condition`が`boolean`であれば、`Assertions.assertTrue`または`Assertions.assertFalse`を使用する
-- `instanceof`の比較は`Assertions.assertInstanceOf`を使用する
+- `isInstance`または`instanceof`の比較は`Assertions.assertInstanceOf`を使用する
 
 ### メッセージの検証
 
