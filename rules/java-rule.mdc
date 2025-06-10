@@ -199,7 +199,8 @@ public boolean someMethod(String input) {
 
 ### テスト単位
 
-メソッド単位で行う。privateメソッドの場合は`kmg.core.infrastructure.model.impl.KmgReflectionModelImpl`を使用してテストメソッドを実装する。
+メソッド単位で行い、private修飾子、protected修飾子、デフォルト、public修飾子すべて対象に行う。
+privateメソッドの場合は`kmg.core.infrastructure.model.impl.KmgReflectionModelImpl`を使用してテストメソッドを実装する。
 
 ### テストクラスのアノテーション
 
@@ -286,9 +287,10 @@ public boolean someMethod(String input) {
 
 ### 検証方法の指定
 
-- 1行1行で検証する
+- 1行ずつ検証する
 - 極力、`Assertions.assertEquals`を使用する
 - `Assertions.assertTrue`または`Assertions.assertFalse`は、`Assertions.assertEquals`で代行できる場合は代行する。ただし、`condition`が`boolean`であれば、`Assertions.assertTrue`または`Assertions.assertFalse`を使用する
+- `KmgMsgException`とそれを継承しているテストは`kmg.core.infrastructure.test#verifyKmgMsgException(KmgMsgException, Class<?>, String, KmgComGenMsgTypes)`を使用できるか検討して、使用できる場合は利用する
 - `isInstance`または`instanceof`の比較は`Assertions.assertInstanceOf`を使用する
 
 ### メッセージの検証
