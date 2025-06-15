@@ -201,6 +201,7 @@ public boolean someMethod(String input) {
 
 メソッド単位で行い、private修飾子、protected修飾子、デフォルト、public修飾子すべて対象に行う。
 privateメソッドの場合は`kmg.core.infrastructure.model.impl.KmgReflectionModelImpl`を使用してテストメソッドを実装する。
+また、private変数にアクセスする場合は、`kmg.core.infrastructure.model.impl.KmgReflectionModelImpl`を使用して実装する。
 
 ### テストクラスのアノテーション
 
