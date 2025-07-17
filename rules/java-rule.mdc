@@ -3,9 +3,10 @@ description: Java実装時のルール
 globs: src/**/*.java
 alwaysApply: false
 ---
+
 # プロジェクトの指示
 
-あなたは高度な問題解決能力を持つAIアシスタントです。以下の指示に従って、効率的かつ正確にタスクを遂行してください。
+あなたは高度な問題解決能力を持つ AI アシスタントです。以下の指示に従って、効率的かつ正確にタスクを遂行してください。
 
 まず、ユーザーから受け取った指示を確認します：
 
@@ -36,7 +37,7 @@ alwaysApply: false
 
 - 既存の類似機能の有無
 - 同名または類似名の関数やコンポーネント
-- 重複するAPIエンドポイント
+- 重複する API エンドポイント
 - 共通化可能な処理の特定
 
 ## 2. タスクの実行
@@ -52,6 +53,7 @@ alwaysApply: false
 
 - 各タスクの実行結果を迅速に検証してください。
 - エラーや不整合が発生した場合は、以下のプロセスで対応してください
+
   - 問題の切り分けと原因特定（ログ分析、デバッグ情報の確認）
   - 対策案の作成と実施
   - 修正後の動作検証
@@ -106,8 +108,8 @@ alwaysApply: false
 - 重要な判断が必要な場合は、その都度報告し、承認を得てください。
 - 予期せぬ問題が発生した場合は、即座に報告し、対応策を提案してください。
 - **明示的に指示されていない変更は行わないでください。** 必要と思われる変更がある場合は、まず提案として報告し、承認を得てから実施してください。
-- **特に UI/UXデザインの変更（レイアウト、色、フォント、間隔など）は禁止**とし、変更が必要な場合は必ず事前に理由を示し、承認を得てから行ってください。
-- **技術スタックに記載のバージョン（APIやフレームワーク、ライブラリ等）を勝手に変更しないでください。** 変更が必要な場合は、その理由を明確にして承認を得るまでは変更を行わないでください。
+- **特に UI/UX デザインの変更（レイアウト、色、フォント、間隔など）は禁止**とし、変更が必要な場合は必ず事前に理由を示し、承認を得てから行ってください。
+- **技術スタックに記載のバージョン（API やフレームワーク、ライブラリ等）を勝手に変更しないでください。** 変更が必要な場合は、その理由を明確にして承認を得るまでは変更を行わないでください。
 
 ---
 
@@ -117,7 +119,7 @@ alwaysApply: false
 
 - メソッドの戻り値は変数`result`で定義
 - メソッドの戻り値の変数は先頭で宣言
-- return文は`return result;`に統一
+- return 文は`return result;`に統一
 
 ### 処理コメント
 
@@ -127,7 +129,7 @@ alwaysApply: false
 ### Javadoc
 
 - 修飾子に限らず必須
-- Javadocルールに従う
+- Javadoc ルールに従う
 
 ### 早期リターンパターン
 
@@ -139,10 +141,7 @@ alwaysApply: false
 
 #### 詳細な指示
 
-コードの可読性を高めるため、以下の方針でコードを書いてください：
-    - ネストを減らすため、条件が満たされない場合は早期にreturnする
-    - if-elseの代わりに、ガード節（早期リターン）を使用する
-    - インデントの深さを最小限に抑える
+コードの可読性を高めるため、以下の方針でコードを書いてください： - ネストを減らすため、条件が満たされない場合は早期に return する - if-else の代わりに、ガード節（早期リターン）を使用する - インデントの深さを最小限に抑える
 
 #### 具体例を含む指示
 
@@ -199,9 +198,9 @@ public boolean someMethod(String input) {
 
 ### テスト単位
 
-メソッド単位で行い、private修飾子、protected修飾子、デフォルト、public修飾子すべて対象に行う。
-privateメソッドの場合は`kmg.core.infrastructure.model.impl.KmgReflectionModelImpl`を使用してテストメソッドを実装する。
-また、private変数にアクセスする場合は、`kmg.core.infrastructure.model.impl.KmgReflectionModelImpl`を使用して実装する。
+メソッド単位で行い、private 修飾子、protected 修飾子、デフォルト、public 修飾子すべて対象に行う。
+private メソッドの場合は`kmg.core.infrastructure.model.impl.KmgReflectionModelImpl`を使用してテストメソッドを実装する。
+また、private 変数にアクセスする場合は、`kmg.core.infrastructure.model.impl.KmgReflectionModelImpl`を使用して実装する。
 
 ### テストクラスのアノテーション
 
@@ -231,13 +230,13 @@ privateメソッドの場合は`kmg.core.infrastructure.model.impl.KmgReflection
 ### テストメソッドの中身
 
 - テストは対象となるメソッドごとに行う。
-- 1つのテストメソッドに1つのテストを実装する。
+- 1 つのテストメソッドに 1 つのテストを実装する。
 - 正常系、準正常系、異常系に分けて実装する。
-  - 正常系:正常処理が完了するパターン。例：正常にreturn文の実行され、throwされない。
-  - 準正常系:処理が正しく完了しないパターン。例：引数の不正によるエラーによりreturn文またはthrowされる。
-  - 異常系:正常系、準正常系以外の想定外のパターン。例：データベースの接続エラーによりthrowされる。
+  - 正常系:正常処理が完了するパターン。例：正常に return 文の実行され、throw されない。
+  - 準正常系:処理が正しく完了しないパターン。例：引数の不正によるエラーにより return 文または throw される。
+  - 異常系:正常系、準正常系以外の想定外のパターン。例：データベースの接続エラーにより throw される。
 
-### テストメソッドのJavaDoc
+### テストメソッドの JavaDoc
 
 #### フォーマット
 
@@ -283,20 +282,22 @@ privateメソッドの場合は`kmg.core.infrastructure.model.impl.KmgReflection
 
 - `/* 検証の実施 */`のコメントを入れる。
 - `Assertions.assertTrue`は`actualXXX`と説明を記載する。
+- `Assertions.assertFalse`は`actualXXX`と説明を記載する。
 - `Assertions.assertEquals`は`actualXXX`と説明を記載する。
 - `Assertions.assertEquals`は`expectedXXX`と`actualXXX`と説明を記載する。
 
 ### 検証方法の指定
 
-- 1行ずつ検証する
-- 極力、`Assertions.assertEquals`を使用する
+- 1 行ずつ検証する
 - `Assertions.assertTrue`または`Assertions.assertFalse`は、`Assertions.assertEquals`で代行できる場合は代行する。ただし、`condition`が`boolean`であれば、`Assertions.assertTrue`または`Assertions.assertFalse`を使用する
 - `KmgMsgException`とそれを継承しているテストは`kmg.core.infrastructure.test#verifyKmgMsgException(KmgMsgException, Class<?>, String, KmgComGenMsgTypes)`を使用できるか検討して、使用できる場合は利用する
 - `isInstance`または`instanceof`の比較は`Assertions.assertInstanceOf`を使用する
+- null かのチェックは`Assertions.Assertions.assertNull`を使用する
+- それ以外は、`Assertions.assertEquals`を使用する。期待値は「期待値の定義」で定義した値を使用する。
 
 ### メッセージの検証
 
-- コード例に習い、メッセージは1行ずつ検証を行う
+- コード例に習い、メッセージは 1 行ずつ検証を行う
 
 #### メッセージの検証のコード例
 
@@ -339,7 +340,7 @@ public void testMethod() {
 
 ## Javadoc のフォーマットルール
 
-### Javaプログラムのための標準的かつ包括的なJavadocフォーマットの例を示します：
+### Java プログラムのための標準的かつ包括的な Javadoc フォーマットの例を示します：
 
 ```java
 /**
@@ -378,6 +379,7 @@ public class SampleClass {
 主要なタグの説明：
 
 基本的なタグ：
+
 ```
 @param  - メソッドのパラメータの説明
 @return - 戻り値の説明
@@ -389,6 +391,7 @@ public class SampleClass {
 ```
 
 追加的なタグ：
+
 ```
 @deprecated - 非推奨であることを示す
 @link      - 他のクラスやメソッドへのリンク
@@ -400,6 +403,7 @@ public class SampleClass {
 記述のガイドライン：
 
 1. 最初の文：
+
 ```java
 /**
  * この最初の文は要約文として扱われます。
@@ -408,6 +412,7 @@ public class SampleClass {
 ```
 
 2. コードの例の記述：
+
 ```java
 /**
  * サンプルコードの使用例：
@@ -420,6 +425,7 @@ public class SampleClass {
 ```
 
 3. リンクの使用：
+
 ```java
 /**
  * 詳細は{@link OtherClass#otherMethod()}を参照してください。
@@ -427,6 +433,7 @@ public class SampleClass {
 ```
 
 4. 箇条書きの使用：
+
 ```java
 /**
  * このメソッドは以下の処理を行います：
@@ -444,7 +451,7 @@ public class SampleClass {
 2. 完全な文章で記述する
 3. 技術的な正確さを保つ
 4. 必要な情報を漏れなく記載する
-5. HTMLタグを適切に使用する
+5. HTML タグを適切に使用する
 
 チーム開発での統一フォーマット例：
 
